@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://qyc6hgllyndt"]
+
+[ext_resource type="PackedScene" uid="uid://cspqrgorrfya" path="res://scenes/player.tscn" id="1_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://ntfelmxam3pf" path="res://scenes/plateform.tscn" id="2_w8frs"]
+
+[node name="Level" type="Node2D" unique_id=507334421]
+
+[node name="Player" parent="." unique_id=111970798 instance=ExtResource("1_w7c3h")]
+position = Vector2(1250, 31)
+
+[node name="Plateform" parent="." unique_id=1565322016 instance=ExtResource("2_w8frs")]
+position = Vector2(-179, 220)
+
+[node name="Plateform2" parent="." unique_id=1807969228 instance=ExtResource("2_w8frs")]
+position = Vector2(828, 123)
+
+[node name="Plateform3" parent="." unique_id=1396595779 instance=ExtResource("2_w8frs")]
+position = Vector2(1229, 376)
+
+[node name="Plateform4" parent="." unique_id=267208478 instance=ExtResource("2_w8frs")]
+position = Vector2(247, 303)
+
+[node name="Plateform5" parent="." unique_id=670759665 instance=ExtResource("2_w8frs")]
+position = Vector2(130, 518)
+
+[node name="Plateform6" parent="." unique_id=40099700 instance=ExtResource("2_w8frs")]
+position = Vector2(363, 709)
+
+[node name="Plateform7" parent="." unique_id=853868414 instance=ExtResource("2_w8frs")]
+position = Vector2(1124, 663)
+
+[node name="Plateform8" parent="." unique_id=865148628 instance=ExtResource("2_w8frs")]
+position = Vector2(1171, 586)
