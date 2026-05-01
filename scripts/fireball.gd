@@ -16,4 +16,10 @@ func _on_body_entered(body):
 	explode()
 
 func explode():
-	queue_free()
+	speed = 0
+	$CollisionShape2D.disabled = true
+	$AnimatedSprite2D.play("default")
+
+func _on_AnimationSprite2D_animation_finished():
+	if $AnimatedSprite2D.animation == "default":
+		queue_free()
