@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-
 const SPEED = 100.0
 const JUMP_VELOCITY = -125.0
 
 # HP 
 var max_hp = 10
 var hp = 10
+
+#mana
+var max_mana = 10
+var mana = 10
 
 # xp 
 var xp = 0
@@ -38,6 +41,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_up"):
 		take_damage(1)
+	
+	if Input.is_action_just_pressed("ui_down"):
+		reduce_mana(3)
 
 
 
@@ -47,7 +53,6 @@ func add_xp(amount):
 	
 	if xp >= xp_to_next_level:
 		level_up()
-
 
 
 func level_up():
@@ -67,8 +72,16 @@ func take_damage(amount):
 		die()
 
 
-
 func die():
 	print("Player dead")
 	hp = max_hp
+	mana = max_mana
 	global_position = Vector2(0, 0)
+
+func reduce_mana(amount):
+	mana -= amount
+	mana = max(mana, 0)
+	print("mana : ", mana)
+	
+	if mana == 0:
+		take_damage(amount)

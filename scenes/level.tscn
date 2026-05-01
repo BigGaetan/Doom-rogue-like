@@ -6,8 +6,8 @@
 
 [node name="Level" type="Node2D" unique_id=507334421]
 
-[node name="Player" parent="." unique_id=111970798 instance=ExtResource("1_w7c3h")]
-position = Vector2(1250, 31)
+[node name="Player" parent="." unique_id=111970798 groups=["player"] instance=ExtResource("1_w7c3h")]
+position = Vector2(1263, 55)
 
 [node name="Plateform" parent="." unique_id=1565322016 instance=ExtResource("2_w8frs")]
 position = Vector2(-179, 220)
