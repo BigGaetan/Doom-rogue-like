@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
+@export var fireball_scene: PackedScene
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -125.0
 
@@ -18,12 +20,16 @@ var xp = 0
 var level = 1
 var xp_to_next_level = 10
 
+# spell
+var is_casting = false
+var cast_time = 0.5
+var cast_timer = 0.0
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -43,14 +49,25 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
 		anim.flip_h = velocity.x < 0
 	
+	
+	# test pour l'ajout et reduction des bars
 	if Input.is_action_just_pressed("ui_cancel"):
 		add_xp(3)
 	
 	if Input.is_action_just_pressed("ui_up"):
 		take_damage(1)
 	
-	if Input.is_action_just_pressed("ui_down"):
-		reduce_mana(3)
+	if Input.is_action_just_pressed("cast_spell") and not is_casting:
+		start_cast()
+	
+	if is_casting:
+		cast_timer -= delta
+		velocity.x = 0  # enlever cette ligne pour ne pas bloquer le déplacement pendant de cast
+		
+		if cast_timer <= 0:
+			finish_cast()
+
+
 
 func updated_animation():
 	if not is_on_floor():
@@ -64,16 +81,12 @@ func updated_animation():
 		else:
 			anim.play("default")
 
-
-
-
 func add_xp(amount):
 	xp += amount
 	print("XP : ", xp, "/", xp_to_next_level)
 	
 	if xp >= xp_to_next_level:
 		level_up()
-
 
 func level_up():
 	level += 1
@@ -82,7 +95,6 @@ func level_up():
 	
 	print("Level Up \n level : ", level)
 
-
 func take_damage(amount):
 	hp -= amount
 	hp = max(hp, 0)
@@ -90,7 +102,6 @@ func take_damage(amount):
 	
 	if hp == 0:
 		die()
-
 
 func die():
 	print("Player dead")
@@ -105,3 +116,26 @@ func reduce_mana(amount):
 	
 	if mana == 0:
 		take_damage(amount)
+
+func start_cast():
+	is_casting = true
+	reduce_mana(3)
+	cast_timer = cast_time
+	#play_anim("cast") besoin de rajouter l'animation de cast
+
+func finish_cast():
+	is_casting = false
+	shoot_fireball()
+
+func shoot_fireball():
+	var fireball = fireball_scene.instantiate()
+	
+	fireball.global_position = global_position + Vector2(20 * (-1 if anim.flip_h else 1), 0)
+	
+	fireball.direction = -1 if anim.flip_h else 1
+	
+	get_tree().current_scene.add_child(fireball)
+	
+	
+	
+	
