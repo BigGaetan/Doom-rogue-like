@@ -83,6 +83,11 @@ region = Rect2(0, 576, 36, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"cast",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
@@ -172,8 +177,7 @@ script = ExtResource("1_g2els")
 position = Vector2(-1.1920929e-07, 0)
 scale = Vector2(0.041116804, 0.043243542)
 sprite_frames = SubResource("SpriteFrames_60mlk")
-animation = &"fall"
-frame_progress = 0.2416139
+animation = &"cast"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073408532]
 position = Vector2(-0.1, 0.1)

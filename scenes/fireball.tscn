@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dq38tk8rdt2l3"]
+
+[ext_resource type="Script" uid="uid://cm1m0om2jbhlq" path="res://scripts/fireball.gd" id="1_3s14c"]
+[ext_resource type="Texture2D" uid="uid://c05f67p2x2qaq" path="res://sprite/mage/default/sprite/ui/barre mana/pv-barre2.png" id="2_1gl40"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cb14k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1gl40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
+
+[node name="Fireball" type="CharacterBody2D" unique_id=1227648738]
+script = ExtResource("1_3s14c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=791180815]
+sprite_frames = SubResource("SpriteFrames_cb14k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081044797]
+shape = SubResource("CircleShape2D_1gl40")
