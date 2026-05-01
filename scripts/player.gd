@@ -62,8 +62,6 @@ func _physics_process(delta: float) -> void:
 	
 	if is_casting:
 		cast_timer -= delta
-		
-		
 		velocity.x = 0  # enlever cette ligne pour ne pas bloquer le déplacement pendant de cast
 		
 		if cast_timer <= 0:

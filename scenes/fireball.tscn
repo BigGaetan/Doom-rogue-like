@@ -42,13 +42,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
 radius = 1.0
 
-[node name="Fireball" type="CharacterBody2D" unique_id=1227648738]
+[node name="Fireball" type="Area2D" unique_id=1472277266]
+disable_mode = 2
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("1_3s14c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=791180815]
 position = Vector2(7.450581e-09, 2.2351742e-08)
-scale = Vector2(0.0625, 0.0625)
+scale = Vector2(0.033, 0.033)
 sprite_frames = SubResource("SpriteFrames_cb14k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081044797]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_1gl40")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

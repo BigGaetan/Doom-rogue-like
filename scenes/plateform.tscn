@@ -6,6 +6,8 @@
 size = Vector2(900, 129)
 
 [node name="Plateform" type="StaticBody2D" unique_id=1565322016]
+collision_layer = 4
+collision_mask = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1084115339]
 scale = Vector2(0.58550066, 0.3976923)

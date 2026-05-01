@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bo0dbw4x66m2x" path="res://scripts/hud.gd" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://mc7nr3lkugc8" path="res://sprite/mage/default/sprite/ui/barre mana/manabarre1.png" id="2_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://c05f67p2x2qaq" path="res://sprite/mage/default/sprite/ui/barre mana/pv-barre2.png" id="3_047uy"]
-[ext_resource type="Texture2D" uid="uid://bx1c6vl6eypnx" path="res://sprite/mage/default/sprite/ui/barre mana/manabarre2.png" id="3_uo2fv"]
 [ext_resource type="Texture2D" uid="uid://gggx0783d0nr" path="res://sprite/mage/default/sprite/ui/barre mana/xp-barre2.png" id="4_047uy"]
+[ext_resource type="Texture2D" uid="uid://bq1qgdw6k0vgu" path="res://sprite/mage/default/sprite/ui/barre mana/mana-barre2.png" id="4_uo2fv"]
 
 [node name="HUD" type="CanvasLayer" unique_id=180075437]
 script = ExtResource("1_ahhtf")
@@ -28,7 +28,7 @@ offset_top = 65.0
 offset_right = 256.0
 offset_bottom = 129.0
 texture_under = ExtResource("2_6fi6k")
-texture_progress = ExtResource("3_uo2fv")
+texture_progress = ExtResource("4_uo2fv")
 
 [node name="ManaLabel" type="Label" parent="." unique_id=1039498214]
 offset_left = 256.0

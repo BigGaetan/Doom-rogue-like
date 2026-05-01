@@ -214,6 +214,7 @@ radius = 0.5
 height = 2.6
 
 [node name="Player" type="CharacterBody2D" unique_id=111970798]
+collision_mask = 6
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=38957576]
@@ -221,7 +222,7 @@ position = Vector2(-1.1920929e-07, 0)
 scale = Vector2(0.041116804, 0.043243542)
 sprite_frames = SubResource("SpriteFrames_60mlk")
 animation = &"cast"
-frame_progress = 0.55483747
+frame_progress = 0.66205794
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073408532]
 position = Vector2(-0.1, 0.1)
