@@ -1,13 +1,38 @@
 [gd_scene format=3 uid="uid://dq38tk8rdt2l3"]
 
 [ext_resource type="Script" uid="uid://cm1m0om2jbhlq" path="res://scripts/fireball.gd" id="1_3s14c"]
-[ext_resource type="Texture2D" uid="uid://c05f67p2x2qaq" path="res://sprite/mage/default/sprite/ui/barre mana/pv-barre2.png" id="2_1gl40"]
+[ext_resource type="Texture2D" uid="uid://ofq5yhtfy4a5" path="res://sprite/mage/default/sprite/projectile/fire-ball.png" id="2_1gl40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb14k"]
+atlas = ExtResource("2_1gl40")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kba2"]
+atlas = ExtResource("2_1gl40")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lgj"]
+atlas = ExtResource("2_1gl40")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqoxj"]
+atlas = ExtResource("2_1gl40")
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cb14k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1gl40")
+"texture": SubResource("AtlasTexture_cb14k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kba2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqoxj")
 }],
 "loop": true,
 "name": &"default",
@@ -15,11 +40,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1gl40"]
+radius = 1.0
 
 [node name="Fireball" type="CharacterBody2D" unique_id=1227648738]
 script = ExtResource("1_3s14c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=791180815]
+position = Vector2(7.450581e-09, 2.2351742e-08)
+scale = Vector2(0.0625, 0.0625)
 sprite_frames = SubResource("SpriteFrames_cb14k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081044797]

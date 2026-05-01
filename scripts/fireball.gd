@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed = 300.0
+var speed = 50.0
 var direction = 1
 
 

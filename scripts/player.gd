@@ -22,7 +22,7 @@ var xp_to_next_level = 10
 
 # spell
 var is_casting = false
-var cast_time = 0.5
+var cast_time = 1
 var cast_timer = 0.0
 
 
@@ -62,24 +62,31 @@ func _physics_process(delta: float) -> void:
 	
 	if is_casting:
 		cast_timer -= delta
+		
+		
 		velocity.x = 0  # enlever cette ligne pour ne pas bloquer le déplacement pendant de cast
 		
 		if cast_timer <= 0:
 			finish_cast()
 
-
+func play_anim(name):
+	if anim.animation != name:
+		anim.play(name)
 
 func updated_animation():
+	if is_casting:
+		play_anim("cast")
+		return
 	if not is_on_floor():
 		if velocity.y < 0:
-			anim.play("jump")
+			play_anim("jump")
 		else:
-			anim.play("fall")
+			play_anim("fall")
 	else:
 		if abs(velocity.x) > 10:
-			anim.play("walk")
+			play_anim("walk")
 		else:
-			anim.play("default")
+			play_anim("default")
 
 func add_xp(amount):
 	xp += amount
@@ -121,7 +128,6 @@ func start_cast():
 	is_casting = true
 	reduce_mana(3)
 	cast_timer = cast_time
-	#play_anim("cast") besoin de rajouter l'animation de cast
 
 func finish_cast():
 	is_casting = false
@@ -130,12 +136,8 @@ func finish_cast():
 func shoot_fireball():
 	var fireball = fireball_scene.instantiate()
 	
-	fireball.global_position = global_position + Vector2(20 * (-1 if anim.flip_h else 1), 0)
+	fireball.global_position = global_position + Vector2(2 * (-1 if anim.flip_h else 1), 0)
 	
 	fireball.direction = -1 if anim.flip_h else 1
 	
 	get_tree().current_scene.add_child(fireball)
-	
-	
-	
-	

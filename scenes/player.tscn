@@ -2,8 +2,33 @@
 
 [ext_resource type="Script" uid="uid://dmsd580gk55kv" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dwfmjoi04ku2g" path="res://sprite/mage/default/sprite/character/walk/Mage-Sprite-walk.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bqrnicvxfeprl" path="res://sprite/mage/default/sprite/character/attack/Mage-Sprite-falling.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bn0r3ndmwk3at" path="res://sprite/mage/default/sprite/character/jump/Mage-Sprite-jump.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bpt4y81lea8ke" path="res://sprite/mage/default/sprite/character/falling/Mage-Sprite-falling.png" id="3_qlg0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 0, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 64, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 128, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 256, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 192, 36, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("2_qlg0r")
+region = Rect2(0, 320, 36, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_qhqgy")
@@ -83,10 +108,28 @@ region = Rect2(0, 576, 36, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujl30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
+}],
 "loop": true,
 "name": &"cast",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,6 +221,7 @@ position = Vector2(-1.1920929e-07, 0)
 scale = Vector2(0.041116804, 0.043243542)
 sprite_frames = SubResource("SpriteFrames_60mlk")
 animation = &"cast"
+frame_progress = 0.55483747
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073408532]
 position = Vector2(-0.1, 0.1)
