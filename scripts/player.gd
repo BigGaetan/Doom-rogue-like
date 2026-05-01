@@ -57,9 +57,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
 		take_damage(1)
 	
-	if Input.is_action_just_pressed("ui_down"):
-		reduce_mana(3)
-	
 	if Input.is_action_just_pressed("cast_spell") and not is_casting:
 		start_cast()
 	
@@ -122,6 +119,7 @@ func reduce_mana(amount):
 
 func start_cast():
 	is_casting = true
+	reduce_mana(3)
 	cast_timer = cast_time
 	#play_anim("cast") besoin de rajouter l'animation de cast
 
