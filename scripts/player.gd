@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var anim = $AnimatedSprite2D
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -125.0
 
@@ -36,6 +38,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	updated_animation()
+	
+	if velocity.x != 0:
+		anim.flip_h = velocity.x < 0
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		add_xp(3)
@@ -45,6 +51,19 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_down"):
 		reduce_mana(3)
+
+func updated_animation():
+	if not is_on_floor():
+		if velocity.y < 0:
+			anim.play("jump")
+		else:
+			anim.play("fall")
+	else:
+		if abs(velocity.x) > 10:
+			anim.play("walk")
+		else:
+			anim.play("default")
+
 
 
 
