@@ -1,5 +1,5 @@
 { "frames": {
-   "Mage-Sprite-jump 0.aseprite": {
+   "Mage-Sprite-falling 0.aseprite": {
     "frame": { "x": 0, "y": 0, "w": 36, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -7,7 +7,7 @@
     "sourceSize": { "w": 36, "h": 64 },
     "duration": 100
    },
-   "Mage-Sprite-jump 1.aseprite": {
+   "Mage-Sprite-falling 1.aseprite": {
     "frame": { "x": 0, "y": 64, "w": 36, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -15,7 +15,7 @@
     "sourceSize": { "w": 36, "h": 64 },
     "duration": 100
    },
-   "Mage-Sprite-jump 2.aseprite": {
+   "Mage-Sprite-falling 2.aseprite": {
     "frame": { "x": 0, "y": 128, "w": 36, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -23,7 +23,7 @@
     "sourceSize": { "w": 36, "h": 64 },
     "duration": 100
    },
-   "Mage-Sprite-jump 3.aseprite": {
+   "Mage-Sprite-falling 3.aseprite": {
     "frame": { "x": 0, "y": 192, "w": 36, "h": 64 },
     "rotated": false,
     "trimmed": false,
@@ -35,7 +35,7 @@
  "meta": {
   "app": "https://www.aseprite.org/",
   "version": "1.3.17.2-x64",
-  "image": "Mage-Sprite-jump.png",
+  "image": "Mage-Sprite-falling.png",
   "format": "RGBA8888",
   "size": { "w": 36, "h": 256 },
   "scale": "1",
