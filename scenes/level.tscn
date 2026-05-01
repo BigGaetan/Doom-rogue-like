@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cspqrgorrfya" path="res://scenes/player.tscn" id="1_w7c3h"]
 [ext_resource type="PackedScene" uid="uid://ntfelmxam3pf" path="res://scenes/plateform.tscn" id="2_w8frs"]
+[ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="3_w8frs"]
 
 [node name="Level" type="Node2D" unique_id=507334421]
 
@@ -31,3 +32,5 @@ position = Vector2(1124, 663)
 
 [node name="Plateform8" parent="." unique_id=865148628 instance=ExtResource("2_w8frs")]
 position = Vector2(1171, 586)
+
+[node name="HUD" parent="." unique_id=180075437 instance=ExtResource("3_w8frs")]

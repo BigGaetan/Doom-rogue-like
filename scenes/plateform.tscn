@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bhodbuq3rfk1f" path="res://temporaire-sprite/test1Platform.png" id="1_g4adl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipp5d"]
-size = Vector2(900, 130)
+size = Vector2(900, 129)
 
 [node name="Plateform" type="StaticBody2D" unique_id=1565322016]
 
@@ -12,4 +12,5 @@ scale = Vector2(0.58550066, 0.3976923)
 texture = ExtResource("1_g4adl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350888488]
+position = Vector2(0, -0.13)
 shape = SubResource("RectangleShape2D_ipp5d")

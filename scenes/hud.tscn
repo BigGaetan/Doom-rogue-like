@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dshb3hagidi2h"]
+
+[ext_resource type="Script" uid="uid://bo0dbw4x66m2x" path="res://scenes/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=180075437]
+script = ExtResource("1_ahhtf")
+
+[node name="HP Bar" type="TextureProgressBar" parent="." unique_id=1465853403]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="XP Bar" type="TextureProgressBar" parent="." unique_id=1410723948]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level" type="Label" parent="." unique_id=1039498214]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "LOL"

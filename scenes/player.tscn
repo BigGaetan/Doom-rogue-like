@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cspqrgorrfya"]
 
 [ext_resource type="Script" uid="uid://dmsd580gk55kv" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://b5ow5k7i608vu" path="res://temporaire-sprite/test1SpritePlayer.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ymgk3ge4dc5d" path="res://sprite/mage/default/sprite/Mage-Sprite-0001.png" id="2_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(42, 48)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 0.5
+height = 2.6
 
 [node name="Player" type="CharacterBody2D" unique_id=111970798]
 script = ExtResource("1_g2els")
@@ -12,9 +13,11 @@ script = ExtResource("1_g2els")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=338081907]
 position = Vector2(-1.1920929e-07, 0)
 scale = Vector2(0.041116804, 0.043243542)
-texture = ExtResource("2_qhqgy")
+texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073408532]
-shape = SubResource("RectangleShape2D_dqkch")
+position = Vector2(-0.1, 0.1)
+shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1079498183]
+zoom = Vector2(25, 25)
