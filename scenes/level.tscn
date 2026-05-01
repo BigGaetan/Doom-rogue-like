@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dq38tk8rdt2l3" path="res://scenes/fireball.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://ntfelmxam3pf" path="res://scenes/plateform.tscn" id="2_w8frs"]
 [ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://bbyw18ta36gxc" path="res://scenes/enemy.tscn" id="5_ppgk2"]
 
 [node name="Level" type="Node2D" unique_id=507334421]
 
@@ -36,3 +37,15 @@ position = Vector2(1124, 663)
 position = Vector2(1171, 586)
 
 [node name="HUD" parent="." unique_id=180075437 instance=ExtResource("3_w8frs")]
+
+[node name="Enemy" parent="." unique_id=498072190 instance=ExtResource("5_ppgk2")]
+position = Vector2(587, 37)
+
+[node name="Enemy2" parent="." unique_id=2070601217 instance=ExtResource("5_ppgk2")]
+position = Vector2(359, 220)
+
+[node name="Enemy3" parent="." unique_id=1465704611 instance=ExtResource("5_ppgk2")]
+position = Vector2(85, 133)
+
+[node name="Enemy4" parent="." unique_id=87252680 instance=ExtResource("5_ppgk2")]
+position = Vector2(999, 34)
