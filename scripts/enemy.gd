@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var animE = $AnimatedSprite2D
 @onready var detction = $DetectionArea
 
-const SPEED = 25.0
-const GRAVITY = 900
+var SPEED = Global.speed_enemy
+var GRAVITY = Global.GRAVITY
 
 var direction = -1
 
