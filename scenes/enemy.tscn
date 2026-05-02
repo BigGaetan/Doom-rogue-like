@@ -97,12 +97,14 @@ size = Vector2(93.45795, 21.042873)
 size = Vector2(28, 21)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=498072190]
+scale = Vector2(0.025, 0.025)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_7p1mj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2128431219]
 sprite_frames = SubResource("SpriteFrames_md484")
+speed_scale = 0.03
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1403317908]
 position = Vector2(-5.9604645e-08, 0.5)
