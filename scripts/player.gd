@@ -7,6 +7,12 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -135.0
 
+var knockback_force = 300
+var knockback_vertical = -200
+
+var is_knockback = false
+var knockback_timer = 0.2
+
 # HP 
 var max_hp = 10
 var hp = 10
@@ -49,12 +55,17 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
 		anim.flip_h = velocity.x < 0
 	
-	# test pour l'ajout et reduction des bars
-	if Input.is_action_just_pressed("ui_cancel"):
-		add_xp(3)
+	if is_knockback :
+		move_and_slide()
+		return
 	
-	if Input.is_action_just_pressed("ui_up"):
-		take_damage(1)
+	
+	## test pour l'ajout et reduction des bars
+	#if Input.is_action_just_pressed("ui_cancel"):
+		#add_xp(3)
+	#
+	#if Input.is_action_just_pressed("ui_up"):
+		#take_damage(1)
 	
 	if Input.is_action_just_pressed("cast_spell") and not is_casting:
 		start_cast()
@@ -71,6 +82,9 @@ func play_anim(name):
 		anim.play(name)
 
 func updated_animation():
+	if is_knockback:
+		#play_anim("hit")
+		return
 	if is_casting:
 		play_anim("cast")
 		return
@@ -102,10 +116,10 @@ func level_up():
 	
 	print("Level Up \n level : ", level)
 
-func take_damage(amount):
+func take_damage(amount, source_position = null):
 	hp -= amount
 	hp = max(hp, 0)
-	print("hp : ", hp)
+	apply_knockback(source_position)
 	
 	if hp == 0:
 		die()
@@ -115,6 +129,22 @@ func die():
 	hp = max_hp
 	mana = max_mana
 	global_position = Vector2(0, 0)
+
+func apply_knockback(source_position):
+	is_knockback = true
+	
+	var dir = 0
+	
+	if source_position != null:
+		dir = sign(global_position.x - source_position)
+	else :
+		dir = -1 if anim.flip_h else 1
+	
+	velocity.x = dir * knockback_force
+	velocity.y = knockback_vertical
+	
+	await get_tree().create_timer(knockback_timer).timeout
+	is_knockback = false
 
 func reduce_mana(amount):
 	if amount > mana:
