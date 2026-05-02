@@ -4,7 +4,7 @@ extends Node
 
 var GRAVITY = 900
 var speed_enemy = 25.0
-var speed_player = 100.0
+var speed_player = 30.0
 var speed_fireball = 125.0
 
 func _input(event):
