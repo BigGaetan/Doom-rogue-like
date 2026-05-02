@@ -27,7 +27,10 @@ layout_mode = 2
 [node name="HP" type="HSlider" parent="Panel/VBoxContainer" unique_id=339991740]
 layout_mode = 2
 
-[node name="attack" type="HSlider" parent="Panel/VBoxContainer" unique_id=1288149260]
+[node name="knonckbackH" type="HSlider" parent="Panel/VBoxContainer" unique_id=1288149260]
+layout_mode = 2
+
+[node name="knockbackV" type="HSlider" parent="Panel/VBoxContainer" unique_id=1981948606]
 layout_mode = 2
 
 [node name="change scene" type="Button" parent="Panel/VBoxContainer" unique_id=1838810464]
@@ -35,3 +38,11 @@ layout_mode = 2
 
 [node name="change enemy" type="Button" parent="Panel/VBoxContainer" unique_id=939785553]
 layout_mode = 2
+
+[connection signal="value_changed" from="Panel/VBoxContainer/speed" to="." method="_on_speed_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/gravity" to="." method="_on_gravity_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/HP" to="." method="_on_hp_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/knonckbackH" to="." method="_on_attack_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/knockbackV" to="." method="_on_knockback_v_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/change scene" to="." method="_on_change_scene_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/change enemy" to="." method="_on_change_enemy_pressed"]
