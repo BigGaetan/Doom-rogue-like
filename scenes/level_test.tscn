@@ -632,5 +632,5 @@ position = Vector2(552, 286)
 [node name="ModifyMenu" parent="." unique_id=482795423 instance=ExtResource("6_yvmk3")]
 
 [node name="EndTarget" parent="." unique_id=1041469903 instance=ExtResource("7_r2no1")]
-position = Vector2(582, 222)
-next_scene = "res://scenes/level_test.tscn"
+position = Vector2(557.00006, 286)
+next_scene = "res://scenes/level_test_01.tscn"
