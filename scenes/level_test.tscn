@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="4_7dxvt"]
 [ext_resource type="PackedScene" uid="uid://bbyw18ta36gxc" path="res://scenes/enemy.tscn" id="5_6g5uf"]
 [ext_resource type="Texture2D" uid="uid://d3ke6such8dpw" path="res://sprite/tileset/TheTilesetTemplate Tileset3d_stone.png" id="5_vkcgd"]
+[ext_resource type="PackedScene" uid="uid://d38u3pmd46ixl" path="res://scenes/modify_menu.tscn" id="6_yvmk3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkcgd"]
 resource_name = "tile set 1"
@@ -624,3 +625,5 @@ position = Vector2(552, 282)
 
 [node name="Enemy5" parent="." unique_id=1870338186 instance=ExtResource("5_6g5uf")]
 position = Vector2(552, 286)
+
+[node name="ModifyMenu" parent="." unique_id=482795423 instance=ExtResource("6_yvmk3")]
