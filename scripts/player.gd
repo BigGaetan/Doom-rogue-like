@@ -11,7 +11,7 @@ var knockback_force = Global.knockback_force
 var knockback_vertical = -20
 
 var is_knockback = false
-var knockback_timer = 0.2
+var knockback_timer = 2
 
 # HP 
 var max_hp = 10
@@ -55,9 +55,9 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
 		anim.flip_h = velocity.x < 0
 	
-	if is_knockback :
-		move_and_slide()
-		return
+	#if is_knockback :
+		#move_and_slide()
+		#return
 	
 	
 	## test pour l'ajout et reduction des bars
