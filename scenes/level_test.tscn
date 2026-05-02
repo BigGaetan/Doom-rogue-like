@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://c8tt6vxy0ra1o"]
 
-[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scenes/end_target.gd" id="1_7dxvt"]
 [ext_resource type="PackedScene" uid="uid://cspqrgorrfya" path="res://scenes/player.tscn" id="1_vkcgd"]
 [ext_resource type="PackedScene" uid="uid://dq38tk8rdt2l3" path="res://scenes/fireball.tscn" id="2_yvmk3"]
 [ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="4_7dxvt"]
@@ -8,6 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://d3ke6such8dpw" path="res://sprite/tileset/TheTilesetTemplate Tileset3d_stone.png" id="5_vkcgd"]
 [ext_resource type="PackedScene" uid="uid://d38u3pmd46ixl" path="res://scenes/modify_menu.tscn" id="6_yvmk3"]
 [ext_resource type="PackedScene" uid="uid://cpm14hy3sp51g" path="res://scenes/EndTarget.tscn" id="7_r2no1"]
+
+[sub_resource type="GDScript" id="GDScript_r2no1"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkcgd"]
 resource_name = "tile set 1"
@@ -594,8 +607,18 @@ physics_layer_0/collision_mask = 15
 sources/1 = SubResource("TileSetAtlasSource_vkcgd")
 sources/2 = SubResource("TileSetAtlasSource_yvmk3")
 
+[sub_resource type="GDScript" id="GDScript_7dxvt"]
+script/source = "extends Node2D
+
+@export var next_scene: String = \"res://scenes/level_test.tscn\"
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		get_tree().change_scene_to_file(next_scene)
+"
+
 [node name="Level2" type="Node2D" unique_id=507334421]
-script = ExtResource("1_7dxvt")
+script = SubResource("GDScript_r2no1")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=919882055]
 scale = Vector2(0.033, 0.033)
@@ -633,4 +656,5 @@ position = Vector2(552, 286)
 
 [node name="EndTarget" parent="." unique_id=1041469903 instance=ExtResource("7_r2no1")]
 position = Vector2(557.00006, 286)
+script = SubResource("GDScript_7dxvt")
 next_scene = "res://scenes/level_test_01.tscn"

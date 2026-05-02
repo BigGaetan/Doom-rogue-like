@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpm14hy3sp51g"]
 
-[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scenes/end_target.gd" id="1_p5vad"]
+[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scripts/end_target.gd" id="1_p5vad"]
 [ext_resource type="Texture2D" uid="uid://b6ahorwytgbu" path="res://sprite/assets/flag.png" id="2_u7quu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dgmk"]
@@ -59,6 +59,6 @@ shape = SubResource("RectangleShape2D_2dgmk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1446076124]
 sprite_frames = SubResource("SpriteFrames_p5vad")
-frame_progress = 0.75673944
+frame_progress = 0.21890402
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
