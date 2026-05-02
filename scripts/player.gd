@@ -83,7 +83,7 @@ func play_anim(name):
 
 func updated_animation():
 	if is_knockback:
-		#play_anim("hit")
+		play_anim("hit")
 		return
 	if is_casting:
 		play_anim("cast")

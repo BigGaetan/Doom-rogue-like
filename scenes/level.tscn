@@ -10,7 +10,7 @@
 [node name="Level" type="Node2D" unique_id=507334421]
 
 [node name="Player" parent="." unique_id=111970798 groups=["player"] instance=ExtResource("1_w7c3h")]
-position = Vector2(1263, 55)
+position = Vector2(559, 48)
 fireball_scene = ExtResource("2_mx8sn")
 
 [node name="Plateform" parent="." unique_id=1565322016 instance=ExtResource("2_w8frs")]
@@ -41,15 +41,19 @@ position = Vector2(1171, 586)
 
 [node name="Enemy" parent="." unique_id=498072190 instance=ExtResource("5_ppgk2")]
 position = Vector2(587, 37)
+scale = Vector2(0.025, 0.025)
 
 [node name="Enemy2" parent="." unique_id=2070601217 instance=ExtResource("5_ppgk2")]
 position = Vector2(359, 220)
+scale = Vector2(0.025, 0.025)
 
 [node name="Enemy3" parent="." unique_id=1465704611 instance=ExtResource("5_ppgk2")]
 position = Vector2(85, 133)
+scale = Vector2(0.025, 0.025)
 
 [node name="Enemy4" parent="." unique_id=87252680 instance=ExtResource("5_ppgk2")]
 position = Vector2(999, 34)
+scale = Vector2(0.025, 0.025)
 
 [node name="ModifyMenu" parent="." unique_id=482795423 instance=ExtResource("6_2r41h")]
 visible = false

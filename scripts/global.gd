@@ -6,7 +6,7 @@ var GRAVITY = 900
 var speed_enemy = 15.0
 var speed_player = 20.0
 var speed_fireball = 125.0
-var knockback_force = 15.0
+var knockback_force = 1500.0
 
 func _input(event):
 	if Input.is_action_just_pressed("modify_menu"):
