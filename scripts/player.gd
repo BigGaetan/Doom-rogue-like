@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var fireball_scene: PackedScene
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -125.0
+const JUMP_VELOCITY = -135.0
 
 # HP 
 var max_hp = 10
@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.x != 0:
 		anim.flip_h = velocity.x < 0
-	
 	
 	# test pour l'ajout et reduction des bars
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -97,6 +96,9 @@ func level_up():
 	level += 1
 	xp -= xp_to_next_level
 	xp_to_next_level = int(xp_to_next_level*1.25)
+	
+	hp = max_hp
+	mana = max_mana
 	
 	print("Level Up \n level : ", level)
 
