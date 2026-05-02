@@ -1,17 +1,17 @@
-[gd_scene format=4 uid="uid://c8tt6vxy0ra1o"]
+[gd_scene format=4 uid="uid://c3tv53pbinmtk"]
 
-[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scenes/end_target.gd" id="1_7dxvt"]
-[ext_resource type="PackedScene" uid="uid://cspqrgorrfya" path="res://scenes/player.tscn" id="1_vkcgd"]
-[ext_resource type="PackedScene" uid="uid://dq38tk8rdt2l3" path="res://scenes/fireball.tscn" id="2_yvmk3"]
-[ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="4_7dxvt"]
-[ext_resource type="PackedScene" uid="uid://bbyw18ta36gxc" path="res://scenes/enemy.tscn" id="5_6g5uf"]
-[ext_resource type="Texture2D" uid="uid://d3ke6such8dpw" path="res://sprite/tileset/TheTilesetTemplate Tileset3d_stone.png" id="5_vkcgd"]
-[ext_resource type="PackedScene" uid="uid://d38u3pmd46ixl" path="res://scenes/modify_menu.tscn" id="6_yvmk3"]
-[ext_resource type="PackedScene" uid="uid://cpm14hy3sp51g" path="res://scenes/EndTarget.tscn" id="7_r2no1"]
+[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scenes/end_target.gd" id="1_m3a0m"]
+[ext_resource type="Texture2D" uid="uid://d3ke6such8dpw" path="res://sprite/tileset/TheTilesetTemplate Tileset3d_stone.png" id="2_5qrc1"]
+[ext_resource type="PackedScene" uid="uid://cspqrgorrfya" path="res://scenes/player.tscn" id="3_hl0cb"]
+[ext_resource type="PackedScene" uid="uid://dq38tk8rdt2l3" path="res://scenes/fireball.tscn" id="4_1hrx2"]
+[ext_resource type="PackedScene" uid="uid://dshb3hagidi2h" path="res://scenes/hud.tscn" id="5_woluy"]
+[ext_resource type="PackedScene" uid="uid://bbyw18ta36gxc" path="res://scenes/enemy.tscn" id="6_ethdr"]
+[ext_resource type="PackedScene" uid="uid://d38u3pmd46ixl" path="res://scenes/modify_menu.tscn" id="7_gjiej"]
+[ext_resource type="PackedScene" uid="uid://cpm14hy3sp51g" path="res://scenes/EndTarget.tscn" id="8_gykr5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkcgd"]
 resource_name = "tile set 1"
-texture = ExtResource("5_vkcgd")
+texture = ExtResource("2_5qrc1")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -198,7 +198,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yvmk3"]
-texture = ExtResource("5_vkcgd")
+texture = ExtResource("2_5qrc1")
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -595,7 +595,7 @@ sources/1 = SubResource("TileSetAtlasSource_vkcgd")
 sources/2 = SubResource("TileSetAtlasSource_yvmk3")
 
 [node name="Level2" type="Node2D" unique_id=507334421]
-script = ExtResource("1_7dxvt")
+script = ExtResource("1_m3a0m")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=919882055]
 scale = Vector2(0.033, 0.033)
@@ -611,26 +611,26 @@ tile_map_data = PackedByteArray("AADgAf8AAAAEAAgAAADhAf8AAAAEAAgAAADiAf8AAAAEAAg
 tile_set = SubResource("TileSet_r2no1")
 physics_quadrant_size = 32
 
-[node name="Player" parent="." unique_id=111970798 groups=["player"] instance=ExtResource("1_vkcgd")]
+[node name="Player" parent="." unique_id=111970798 groups=["player"] instance=ExtResource("3_hl0cb")]
 position = Vector2(511, 268)
-fireball_scene = ExtResource("2_yvmk3")
+fireball_scene = ExtResource("4_1hrx2")
 
-[node name="HUD" parent="." unique_id=180075437 instance=ExtResource("4_7dxvt")]
+[node name="HUD" parent="." unique_id=180075437 instance=ExtResource("5_woluy")]
 
-[node name="Enemy" parent="." unique_id=498072190 instance=ExtResource("5_6g5uf")]
+[node name="Enemy" parent="." unique_id=498072190 instance=ExtResource("6_ethdr")]
 position = Vector2(524, 271)
 
-[node name="Enemy2" parent="." unique_id=457052023 instance=ExtResource("5_6g5uf")]
+[node name="Enemy2" parent="." unique_id=457052023 instance=ExtResource("6_ethdr")]
 position = Vector2(522, 269)
 
-[node name="Enemy4" parent="." unique_id=1933531965 instance=ExtResource("5_6g5uf")]
+[node name="Enemy4" parent="." unique_id=1933531965 instance=ExtResource("6_ethdr")]
 position = Vector2(552, 282)
 
-[node name="Enemy5" parent="." unique_id=1870338186 instance=ExtResource("5_6g5uf")]
+[node name="Enemy5" parent="." unique_id=1870338186 instance=ExtResource("6_ethdr")]
 position = Vector2(552, 286)
 
-[node name="ModifyMenu" parent="." unique_id=482795423 instance=ExtResource("6_yvmk3")]
+[node name="ModifyMenu" parent="." unique_id=482795423 instance=ExtResource("7_gjiej")]
 
-[node name="EndTarget" parent="." unique_id=1041469903 instance=ExtResource("7_r2no1")]
-position = Vector2(557.00006, 286)
-next_scene = "res://scenes/level_test_01.tscn"
+[node name="EndTarget" parent="." unique_id=1041469903 instance=ExtResource("8_gykr5")]
+position = Vector2(557, 285)
+next_scene = "res://scenes/Level2.tscn"
