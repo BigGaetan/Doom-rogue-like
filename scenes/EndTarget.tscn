@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cpm14hy3sp51g"]
+
+[ext_resource type="Script" uid="uid://bndh4jmpcypox" path="res://scenes/end_target.gd" id="1_p5vad"]
+[ext_resource type="Texture2D" uid="uid://00cstf0udbru" path="res://sprite/mage/default/sprite/character/damage/Mage-Sprite-damage.png" id="2_u7quu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dgmk"]
+size = Vector2(37, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5vad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u7quu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EndTarget" type="Area2D" unique_id=1041469903]
+script = ExtResource("1_p5vad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1071390913]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_2dgmk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1446076124]
+sprite_frames = SubResource("SpriteFrames_p5vad")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
