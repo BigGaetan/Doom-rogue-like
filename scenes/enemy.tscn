@@ -90,6 +90,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
 size = Vector2(24.761906, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(93.45795, 21.042873)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4w8v"]
+size = Vector2(28, 21)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=498072190]
 collision_layer = 2
 collision_mask = 15
@@ -100,5 +106,22 @@ sprite_frames = SubResource("SpriteFrames_md484")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1403317908]
 position = Vector2(-5.9604645e-08, 0.5)
-scale = Vector2(1.05, 1.05)
+scale = Vector2(1.08, 1.05)
 shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=195521233]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1980398348]
+position = Vector2(0, 0.25793755)
+scale = Vector2(1.07, 1.07)
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="AttaqueArea" type="Area2D" parent="." unique_id=1761583957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttaqueArea" unique_id=836407882]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_c4w8v")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="AttaqueArea" to="." method="_on_attaque_area_body_entered"]

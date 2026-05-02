@@ -117,12 +117,13 @@ func die():
 	global_position = Vector2(0, 0)
 
 func reduce_mana(amount):
-	mana -= amount
-	mana = max(mana, 0)
-	print("mana : ", mana)
-	
-	if mana == 0:
-		take_damage(amount)
+	if amount > mana:
+		take_damage(amount - mana)
+		mana = 0
+	else :
+		mana -= amount
+		mana = max(mana, 0)
+		print("mana : ", mana)
 
 func start_cast():
 	is_casting = true
