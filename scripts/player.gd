@@ -5,13 +5,13 @@ extends CharacterBody2D
 @export var fireball_scene: PackedScene
 
 var SPEED = Global.speed_player
-const JUMP_VELOCITY = -135.0
+const JUMP_VELOCITY = -120.0
 
 var knockback_force = Global.knockback_force
 var knockback_vertical = -20
 
 var is_knockback = false
-var knockback_timer = 2
+var knockback_timer = Global.knockback_timer
 
 # HP 
 var max_hp = 10
@@ -61,8 +61,8 @@ func _physics_process(delta: float) -> void:
 	
 	
 	## test pour l'ajout et reduction des bars
-	#if Input.is_action_just_pressed("ui_cancel"):
-		#add_xp(3)
+	if Input.is_action_just_pressed("ui_cancel"):
+		add_xp(3)
 	#
 	#if Input.is_action_just_pressed("ui_up"):
 		#take_damage(1)
@@ -108,11 +108,13 @@ func add_xp(amount):
 
 func level_up():
 	level += 1
-	xp -= xp_to_next_level
+	xp = 0
 	xp_to_next_level = int(xp_to_next_level*1.25)
 	
 	hp = max_hp
 	mana = max_mana
+	
+	Global.shifting_reality()
 	
 	print("Level Up \n level : ", level)
 
