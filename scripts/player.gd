@@ -7,8 +7,8 @@ extends CharacterBody2D
 var SPEED = Global.speed_player
 const JUMP_VELOCITY = -135.0
 
-var knockback_force = 300
-var knockback_vertical = -200
+var knockback_force = Global.knockback_force
+var knockback_vertical = -20
 
 var is_knockback = false
 var knockback_timer = 0.2
@@ -128,7 +128,7 @@ func die():
 	print("Player dead")
 	hp = max_hp
 	mana = max_mana
-	global_position = Vector2(0, 0)
+	global_position = Vector2(100, 100)
 
 func apply_knockback(source_position):
 	is_knockback = true
