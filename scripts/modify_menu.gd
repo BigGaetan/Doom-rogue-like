@@ -15,19 +15,29 @@ func _on_speed_value_changed(value):
 
 func _on_gravity_value_changed(value):
 	print("gravityyyyyyyyyy")
-	player.GRAVITY = value
+	Global.GRAVITY = value
 
-func _on_HP_value_changed(value):
-	player.max_hp = value
-	player.hp = value
+func _on_hp_value_changed(value: float):
+	player.max_hp = max(1, value)
+	player.hp = max(1, value)
 
-func _on_EnemyButton_pressed():
+
+func _on_knockbackH_value_changed(value: float) -> void:
+	player.knockback_force = value
+	print("kncockback : ", player.knockback_force)
+
+
+#func _on_change_scene_pressed() -> void:
+	#get_tree().change_scene_to_file("res://Level2.tscn")
+
+
+func _on_change_enemy_pressed() -> void:
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
 		e.SPEED *= 1.5
+		print("speed enemy : ", e.SPEED)
 
-#func _on_Level_pressed():
-	#get_tree().change_scene_to_file("res://Level2.tscn")
 
-func _on_KnockbackSlider_value_changed(value):
-	player.knockback_force = value
+func _on_knockback_v_value_changed(value: float) -> void:
+	player.knockback_vertical = value *-1
+	print("kncockback : ", player.knockback_force)
