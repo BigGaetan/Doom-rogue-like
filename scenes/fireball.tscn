@@ -60,7 +60,8 @@ scale = Vector2(0.033, 0.033)
 sprite_frames = SubResource("SpriteFrames_cb14k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081044797]
-scale = Vector2(0.5, 0.5)
+position = Vector2(0.03, -0.02)
+scale = Vector2(0.52, 0.52)
 shape = SubResource("CircleShape2D_1gl40")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
