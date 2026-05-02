@@ -136,7 +136,7 @@ func apply_knockback(source_position):
 	var dir = 0
 	
 	if source_position != null:
-		dir = sign(global_position.x - source_position)
+		dir = sign(global_position.x - source_position.x)
 	else :
 		dir = -1 if anim.flip_h else 1
 	
