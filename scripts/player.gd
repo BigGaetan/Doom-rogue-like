@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @export var fireball_scene: PackedScene
 
-const SPEED = 100.0
+var SPEED = Global.speed_player
 const JUMP_VELOCITY = -135.0
 
 var knockback_force = 300

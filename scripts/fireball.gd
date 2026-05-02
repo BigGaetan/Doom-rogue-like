@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var speed = 125.0
+var speed = Global.speed_fireball
 var direction = 1
 
 
